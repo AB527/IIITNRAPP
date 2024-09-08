@@ -6,6 +6,12 @@ import { Stack, useLocalSearchParams } from 'expo-router';
 
 const contactdevelopers = () => {
   const params = useLocalSearchParams();
+  const imageData = {
+    niket: require(`../assets/contactdevelopers/niket.jpg`),
+    atharva: require(`../assets/contactdevelopers/atharva.jpg`),
+    sameer: require(`../assets/contactdevelopers/sameer.jpg`),
+    shubham: require(`../assets/contactdevelopers/atharva.jpg`)
+  }
   return (
     <ScrollView className="w-full mt-10">
       <Stack.Screen
@@ -14,8 +20,8 @@ const contactdevelopers = () => {
         }}
       />
       <View style={styles.image_conatiner}>
-        <Image style={styles.lead_image} source={require('../assets/no_image_available.png')} />
-        <Image style={styles.lead_image} source={require('../assets/no_image_available.png')} />
+        <Image style={styles.lead_image} source={require('../assets/contactdevelopers/teamhead.jpg')} />
+        <Image style={styles.lead_image} source={require('../assets/contactdevelopers/anandSIR.jpg')} />
       </View>
       <Text style={styles.description_item}>{localData.contactdevelopers.lead1.description}</Text>
       <Text style={styles.description_item}>{localData.contactdevelopers.lead2.description}</Text>
@@ -25,7 +31,7 @@ const contactdevelopers = () => {
           {
             localData.contactdevelopers.developers.map((developer,i)=>
               <View style={styles.developer_item} key={i} className="w-11/12 py-2">
-                <Image style={styles.developer_image} source={require('../assets/no_image_available.png')} />
+                <Image style={styles.developer_image} source={imageData[developer.image]} />
                 <View style={{paddingLeft: 15}}>
                   <Text  className="font-bold">{developer.name}</Text>
                   <Text>{developer.email}</Text>
@@ -49,11 +55,10 @@ const styles = StyleSheet.create({
     marginBottom: 30
   },
   lead_image: {
-    width: 100,
-    height: 100,
+    width: 150,
+    height: 150,
     justifyContent: 'center',
     alignItems: 'center',
-    flexBasis: '40%',
     borderRadius: 1000
   },
   developer_image: {

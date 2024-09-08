@@ -111,35 +111,35 @@
     },
     "contactdevelopers": {
         "lead1": {
-            "image":"",
-            "name" :"Dr. Ramakrishna Bandi",
+            "image": "teamhead",
+            "name" : "Dr. Ramakrishna Bandi",
             "description": "Dr. Ramakrishna Bandi, our esteemed team lead, has been an invaluable pillar of support throughout the journey of developing this app. His keen involvement and guidance have played a significant role in its success."
         },
         "lead2": {
-            "image":"",
-            "name" :"Mr. Anand Bachker",
+            "image": "anandSIR",
+            "name" : "Mr. Anand Bachker",
             "description": "Mr. Anand Bachker, our MUN legend, bestowed upon us the Gatepass app, a true game-changer. Thanks to his brilliance, he's already saved heaps of time for students, and it's still going strong! Let's raise a toast to the creator of Gatepass for spicing up our lives!"
         },
         "developers": [
             {
-                "name" :"Niket Patel",
+                "name" : "Niket Patel",
                 "email": "niket22100@iiitnr.edu.in",
-                "image":""
+                "image": "niket"
             },
             {
-                "name" :"Atharva Bedekar",
+                "name" : "Atharva Bedekar",
                 "email": "bedekar24100@iiitnr.edu.in",
-                "image":""
+                "image": "atharva"
             },
             {
-                "name" :"Sameer Yadav",
+                "name" : "Sameer Yadav",
                 "email": "sameer22100@iiitnr.edu.in",
-                "image":""
+                "image": "sameer"
             },
             {
-                "name" :"Shubham Gupta",
+                "name" : "Shubham Gupta",
                 "email": "shubham22102@iiitnr.edu.in",
-                "image":""
+                "image": "shubham"
             }        
         ]
     },
