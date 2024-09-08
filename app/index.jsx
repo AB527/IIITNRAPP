@@ -4,12 +4,14 @@ import { Link } from "expo-router";
 import localData from './data.json';
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import { MobileAlert, CapitalizeFirstLetter } from "./utility.js"
+import Dialog from "react-native-dialog";
 
 const logo_size = 30
 
 const RootLayout = () => {
   const [bgImage, setBGImage] = useState(require("../assets/home_welcome/welcome_morning_3.png"))
   const [timeStat, setTimeStat] = useState("morning")
+  const [dialogVisible, setDialogVisible] = useState(false)
   React.useEffect(() => {
     const nowHour = (new Date()).getHours();
     if (nowHour > 12 && nowHour <= 16) {
@@ -46,15 +48,23 @@ const RootLayout = () => {
           }
         </View>
         <View style={styles.actionConatiner}>
-          <TouchableOpacity style={styles.actionConatinerItem} className="py-4" onPress={()=>MobileAlert("Dark mode is currently unavailable")}>
+          <TouchableOpacity style={styles.actionConatinerItem} className="py-4" onPress={() => MobileAlert("Dark mode is currently unavailable")}>
             <Text>Switch to dark mode</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.actionConatinerItem} className="py-4" onPress={()=>MobileAlert("Logging you out...")}>
+          <TouchableOpacity style={styles.actionConatinerItem} className="py-4" onPress={() => setDialogVisible(true)}>
             <Text>Logout</Text>
           </TouchableOpacity>
         </View>
 
       </ImageBackground>
+      <Dialog.Container visible={dialogVisible}>
+        <Dialog.Title>Logout</Dialog.Title>
+        <Dialog.Description>
+          Do you want to logout ?
+        </Dialog.Description>
+        <Dialog.Button label="Cancel" onPress={() => setDialogVisible(false)} />
+        <Dialog.Button label="Logout" onPress={() => { MobileAlert("Logging you out..."); setDialogVisible(false) }} />
+      </Dialog.Container>
     </ScrollView>
   )
 }
